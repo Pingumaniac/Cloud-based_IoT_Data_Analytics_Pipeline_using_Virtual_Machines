@@ -37,12 +37,18 @@ The goal of this assignment is to deploy a data analytics pipeline in the cloud 
 
 ## Instructions for setting up the technologies used
 
-1. Install the following Python packages through terminal.
+1. Install the following Python packages through your chosen CLI.
 
 ```
 pip3 install kafka-python
 pip3 install torch torchvision
 pip3 install pymongo
+```
+
+2. Install Docker Image for Apache Kafka through your chosen CLI.
+
+```
+docker pull apache/kafka
 ```
 
 ## Instructions for testing the assignment
