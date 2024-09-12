@@ -45,16 +45,25 @@ pip3 install torch torchvision
 pip3 install pymongo
 ```
 
-2. Install Docker Image for Apache Kafka through your chosen CLI.
+2. Install Docker Image for Apache Kafka.
 
 ```
 docker pull apache/kafka
 ```
 
-3. Download and set up Kafka on your chosen directory.
+3. Download Apache Kafka on your chosen directory using wget or curl -0 command.
 
 ```
 wget https://downloads.apache.org/kafka/3.8.0/kafka_2.13-3.8.0.tgz
+```
+
+```
+curl -O https://downloads.apache.org/kafka/3.8.0/kafka_2.13-3.8.0.tgz
+```
+
+Then, unzip the file, and move to the kafka directory.
+
+```
 tar -xzf kafka_2.13-3.8.0.tgz
 cd kafka_2.13-3.8.0
 ```
