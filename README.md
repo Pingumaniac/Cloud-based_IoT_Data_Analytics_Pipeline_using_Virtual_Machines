@@ -37,7 +37,13 @@ The goal of this assignment is to deploy a data analytics pipeline in the cloud 
 
 ## Instructions for setting up the technologies used
 
-* To be added
+1. Install the following Python packages through terminal.
+
+```
+pip3 install kafka-python
+pip3 install torch torchvision
+pip3 install pymongo
+```
 
 ## Instructions for testing the assignment
 
