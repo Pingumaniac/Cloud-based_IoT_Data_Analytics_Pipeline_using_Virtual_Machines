@@ -51,9 +51,33 @@ pip3 install pymongo
 docker pull apache/kafka
 ```
 
+3. Download and set up Kafka on your chosen directory.
+
+```
+wget https://downloads.apache.org/kafka/3.8.0/kafka_2.13-3.8.0.tgz
+tar -xzf kafka_2.13-3.8.0.tgz
+cd kafka_2.13-3.8.0
+```
+
 ## Instructions for testing the assignment
 
-* To be added
+1. Start ZooKeeper
+
+```
+bin/zookeeper-server-start.sh config/zookeeper.properties
+```
+
+2. Start Kafka Broker
+
+```
+bin/kafka-server-start.sh config/server.properties
+```
+
+3. Create Kafka topics (e.g., iot-data) for the IoT producers and consumers
+
+```
+bin/kafka-topics.sh --create --topic iot-data --bootstrap-server localhost:9092
+```
 
 ## Bug tracking
 
