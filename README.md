@@ -143,23 +143,10 @@ Monitoring and Maintenance: Setting up logging, monitoring, and maintenance proc
 * Youngjae Moon primarily worked on logic for the ML models and ensured proper serialization/deserialization, and trying to get high accuracy.
 * Lisa Liu primarily worked on getting the database and communication set up between the VMs for proper connectivity.
 
-## About Members
+## Team Members
 
-#### Young-jae Moon
-* M.Sc. in computer science and Engineering Graduate Fellowship recipient at Vanderbilt University.
-* Incoming Online Master in computer science student at Georgia Tech.
-* Email: youngjae.moon@Vanderbilt.Edu
+* Young-jae Moon (MS, youngjae.moon@vanderbilt.edu
+* Robert Sheng (BS/MS, robert.sheng@vanderbilt.edu
+* Lisa Liu (BS, chuci.liu@vanderbilt.edu
 
-#### Robert Sheng
-* M.Sc. in computer science student at Vanderbilt University
-* Email: robert.sheng@Vanderbilt.Edu
-
-#### Lisa Liu
-* B.Sc. in computer science student at Vanderbilt University
-* Email: chuci.liu@Vanderbilt.Edu
-
-## Course Instructor
-
-#### Professor Aniruddha Gokhale
-* Professor in the Computer Science at Vanderbilt University
-* Email: a.gokhale@Vanderbilt.edu
+under Professor Aniruddha Gokhale, a.gokhale@vanderbilt.edu
