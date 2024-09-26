@@ -158,7 +158,7 @@ System Integration: Ensuring all components work together seamlessly, including 
 
 Monitoring and Maintenance: Setting up logging, monitoring, and maintenance procedures for the entire system.
 
-### How work was split
+## How work was split
 
 * Robert Sheng primarily worked on getting milestone 1 set up, as well as putting the finishing touches on the project (as well as the README, video, etc.)
 * Youngjae Moon primarily worked on logic for the ML models and ensured proper serialization/deserialization, and trying to get high accuracy.
