@@ -7,6 +7,80 @@ The goal of this assignment is to deploy a data analytics pipeline in the cloud 
 
 <img width="427" alt="image" src="https://github.com/user-attachments/assets/99647e47-b5b6-44f1-923f-e6ca48292f2e">
 
+## Overview
+To reproduce our project, follow installation steps below. Then, on VMs 1 and 3, start Zookeeper and the Kafka server. Start and log into the database on VM4 with
+```
+sudo systemctl start mongod
+mongosh --authenticationDatabase admin -u adminuser -p
+```
+Once mongodb is up and running, run the following:
+```
+use image_database
+db.createCollection("image_data")
+```
+
+You can later check results of our model by running 
+```
+db.image_data.aggregate([ { $group: { _id: null, total: { $sum: 1 }, correct: { $sum: { $cond: [{ $eq: ["$InferredValue", "$GroundTruth"] }, 1, 0] } } } }, { $project: { _id: 0, total: 1, correct: 1, accuracy: { $divide: ["$correct", "$total"] } } }] )
+```
+On VM2, run
+```
+wget https://github.com/chenyaofo/pytorch-cifar-models/releases/download/resnet/cifar10_resnet20-4118986f.pt -O cifar10_resnet20.pt
+```
+to download the weights from the Resnet-20 model for CIFAR10.
+
+Next, start the consumers with 
+```
+python3 inference_consumer.py # on VM2
+python3 db_consumer.py # on VM3
+```
+and the producer on VM1 with
+```
+python3 producer.py
+```
+
+### Components
+#### VM1: Kafka Broker and Image Producer
+
+* Runs Apache Kafka and Zookeeper
+* Produces CIFAR-10 images to the "image_data" Kafka topic
+* Adds noise to images to simulate real-world conditions
+
+producer.py: Generates and sends image data
+
+#### VM2: Inference Consumer
+
+* Consumes image data from VM1
+* Performs image classification using the pretrained CIFAR20
+* Produces inference results to VM3
+
+inference_consumer.py: Processes images and generates predictions
+
+cifar100_resnet18.pth: Pre-trained model weights
+
+#### VM3: Database Consumer and Kafka Broker
+
+* Runs a second Kafka broker
+* Consumes image data from VM1 and inference results from VM2
+* Stores all data in MongoDB on VM4
+
+db_consumer.py: Receives data and manages database operations
+
+#### VM4: MongoDB Server
+
+* Runs MongoDB database
+* Stores all image data and inference results
+
+### Communication
+
+VM1 to VM2: Kafka topic "image_data" (bootstrap server: VM1:9092)
+
+VM2 to VM3: Kafka topic "inference_results" (bootstrap server: VM3:9092)
+
+VM1 to VM3: Kafka topic "image_data" (bootstrap server: VM1:9092)
+
+VM3 to VM4: MongoDB connection
+
 ## About Members
 
 #### Young-jae Moon
@@ -67,29 +141,3 @@ Then, unzip the file, and move to the kafka directory.
 tar -xzf kafka_2.13-3.8.0.tgz
 cd kafka_2.13-3.8.0
 ```
-
-## Instructions for testing the assignment
-
-1. Start ZooKeeper
-
-```
-bin/zookeeper-server-start.sh config/zookeeper.properties
-```
-
-2. Start Kafka Broker
-
-```
-bin/kafka-server-start.sh config/server.properties
-```
-
-3. Create Kafka topics (e.g., iot-data) for the IoT producers and consumers
-
-```
-bin/kafka-topics.sh --create --topic iot-data --bootstrap-server localhost:9092
-```
-
-## Bug tracking
-
-* All users can view and report a bug in the "GitHub Issues" of our repository.
-* Here is the URL for viewing and reporting a list of bugs: https://github.com/Pingumaniac/CS5287_Cloud_Computing_Team6_Homework1/issues
-
