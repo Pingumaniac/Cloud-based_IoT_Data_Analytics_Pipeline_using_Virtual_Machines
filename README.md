@@ -81,28 +81,7 @@ VM1 to VM3: Kafka topic "image_data" (bootstrap server: VM1:9092)
 
 VM3 to VM4: MongoDB connection
 
-## About Members
-
-#### Young-jae Moon
-* M.Sc. in computer science and Engineering Graduate Fellowship recipient at Vanderbilt University.
-* Incoming Online Master in computer science student at Georgia Tech.
-* Email: youngjae.moon@Vanderbilt.Edu
-
-#### Robert Sheng
-* M.Sc. in computer science student at Vanderbilt University
-* Email: robert.sheng@Vanderbilt.Edu
-
-#### Lisa Liu
-* B.Sc. in computer science student at Vanderbilt University
-* Email: chuci.liu@Vanderbilt.Edu
-
-## Course Instructor
-
-#### Professor Aniruddha Gokhale
-* Professor in the Computer Science at Vanderbilt University
-* Email: a.gokhale@Vanderbilt.edu
-
-# Technologies Used
+## Technologies Used
 1. Python 3
 2. Apache Kafka
 3. MongoDB
@@ -163,3 +142,24 @@ Monitoring and Maintenance: Setting up logging, monitoring, and maintenance proc
 * Robert Sheng primarily worked on getting milestone 1 set up, as well as putting the finishing touches on the project (as well as the README, video, etc.)
 * Youngjae Moon primarily worked on logic for the ML models and ensured proper serialization/deserialization, and trying to get high accuracy.
 * Lisa Liu primarily worked on getting the database and communication set up between the VMs for proper connectivity.
+
+## About Members
+
+#### Young-jae Moon
+* M.Sc. in computer science and Engineering Graduate Fellowship recipient at Vanderbilt University.
+* Incoming Online Master in computer science student at Georgia Tech.
+* Email: youngjae.moon@Vanderbilt.Edu
+
+#### Robert Sheng
+* M.Sc. in computer science student at Vanderbilt University
+* Email: robert.sheng@Vanderbilt.Edu
+
+#### Lisa Liu
+* B.Sc. in computer science student at Vanderbilt University
+* Email: chuci.liu@Vanderbilt.Edu
+
+## Course Instructor
+
+#### Professor Aniruddha Gokhale
+* Professor in the Computer Science at Vanderbilt University
+* Email: a.gokhale@Vanderbilt.edu
