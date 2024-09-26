@@ -141,3 +141,25 @@ Then, unzip the file, and move to the kafka directory.
 tar -xzf kafka_2.13-3.8.0.tgz
 cd kafka_2.13-3.8.0
 ```
+
+## Effort Required
+
+Setting up this distributed system required significant effort, as well as the following:
+
+Infrastructure: Provisioning and configuring four separate VMs as well as ensuring network connectivity between them.
+
+Distributed Systems: Installing and configuring Kafka and Zookeeper on multiple machines and ensuring proper communication.
+
+Database Management: Setting up and securing a MongoDB instance.
+
+Machine Learning: Preparing a pre-trained model for inference, potentially including model training or fine-tuning, albeit with the help of LLMs.
+
+System Integration: Ensuring all components work together seamlessly, including proper data serialization and deserialization.
+
+Monitoring and Maintenance: Setting up logging, monitoring, and maintenance procedures for the entire system.
+
+### How work was split
+
+* Robert Sheng primarily worked on getting milestone 1 set up, as well as putting the finishing touches on the project (as well as the README, video, etc.)
+* Youngjae Moon primarily worked on logic for the ML models and ensured proper serialization/deserialization, and trying to get high accuracy.
+* Lisa Liu primarily worked on getting the database and communication set up between the VMs for proper connectivity.
