@@ -1,5 +1,6 @@
-# CS5287_Cloud_Computing_Team6_Homework1
-Manual Deployment of a Cloud-based IoT Data Analytics Pipeline using Virtual Machines
+# Manual Deployment of a Cloud-based IoT Data Analytics Pipeline using Virtual Machines
+
+CS 5287 Programming Assignment 1
 
 ## Goals
 
